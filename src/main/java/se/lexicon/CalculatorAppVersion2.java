@@ -30,8 +30,8 @@ public class CalculatorAppVersion2 {
     public static void main(String[] args) {
 
         //declare variables
-        double num1 = 0;
-        double num2 = 0;
+        double num1;
+        double num2;
         String inputString;
         String operator;
 
@@ -104,18 +104,22 @@ public class CalculatorAppVersion2 {
     }
 
     //my created methods
+    //method for addition
     public static void addition(double num1, double num2) {
         double sum = num1 + num2;
         System.out.println(num1 + " + " + num2 + " = " + sum);
     }
+    //method for subtraction
     public static void subtraction(double num1, double num2){
         double sum = num1 - num2;
         System.out.println(num1 + " - " + num2 + " = " + sum);
     }
+    //method for multiplication
     public static void multiplication(double num1, double num2){
         double sum = num1 * num2;
         System.out.println(num1 + " * " + num2 + " = " + sum);
     }
+    //method for division
     public static void division(double num1, double num2){
         double sum;
         if (num2 == 0){
