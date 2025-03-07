@@ -34,13 +34,12 @@ public class CalculatorAppVersion2 {
         double num2 = 0;
         String inputString;
         String operator;
-        boolean isValid = false;
 
         //create scanner object
         Scanner userInput = new Scanner(System.in);
 
         while (true) { //continue running until user enters q to exit
-            while (!isValid) {
+            while (true) {
                 //try user entry for invalid inputs
                 try {
                     //ask user for first number
@@ -52,15 +51,13 @@ public class CalculatorAppVersion2 {
                     }
                     num1 = Double.parseDouble(inputString); //extract number from string
                     userInput.nextLine(); //clear buffer
-                    isValid = true; //set value to true to exit loop
+                    break; //exits the loop
                 } catch (NumberFormatException e) {
                     System.out.println("Invalid entry, try again!");
                 }
             }
 
-            isValid = false; //set value to false, to enter loop for second number
-
-            while(!isValid) {
+            while(true) {
                 try {
                     //ask user for second number
                     System.out.println("Please enter your second number, or enter q/Q to exit");
@@ -71,15 +68,15 @@ public class CalculatorAppVersion2 {
                     }
                     num2 = Double.parseDouble(inputString); //extract number from string
                     userInput.nextLine(); //clear buffer
-                    isValid = true; //set value to true to exit loop
+                    break; //Exits the loop
                 } catch (NumberFormatException e) {
                     System.out.println("Invalid entry, try again!");
                 }
             }
 
-            isValid = false; //set value to false, to enter loop for operator
+            //isValid = false; //set value to false, to enter loop for operator
 
-            while(!isValid) {
+            while(true) {
                 //ask user for operator
                 System.out.println("Please enter the operator for the calculation to be performed, +, -, *, /, or enter q/Q to exit");
                 operator = userInput.next();
@@ -88,23 +85,21 @@ public class CalculatorAppVersion2 {
                     System.exit(0);
                 } else if (operator.equalsIgnoreCase("+")) {
                     addition(num1, num2);
-                    isValid = true; //set value to true to exit loop
+                    break; //Exits the loop
                 } else if (operator.equalsIgnoreCase("-")) {
                     subtraction(num1, num2);
-                    isValid = true; //set value to true to exit loop
+                    break; //Exits the loop
                 } else if (operator.equalsIgnoreCase("*")) {
                     multiplication(num1, num2);
-                    isValid = true; //set value to true to exit loop
+                    break; //Exits the loop
                 } else if (operator.equalsIgnoreCase("/")) {
                     division(num1, num2);
-                    isValid = true; //set value to true to exit loop
+                    break; //Exits the loop
                 } else {
                     System.out.println("Invalid entry, try again!");
                 }
             }
             userInput.nextLine(); //clear buffer
-            isValid = false; //reset value to false, to reenter first loop.
-
         }
     }
 
